@@ -1,0 +1,262 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F7ECDE; 
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    max-width:none;
+}
+
+/* ---------------- Bookmarker Title Styling ---------------- */
+
+header {
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.bookmarker-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 50px;
+    color: #000; 
+    position: relative;
+    z-index: 2;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: default;
+    transition: all 0.3s;
+}
+
+
+.bookmarker-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; 
+    margin-bottom: 10px;
+    background-color: #ffc477; 
+    transition: height 0.3s;
+    z-index: -1;
+}
+
+.bookmarker-title:hover::before {
+    height: 50%; 
+}
+
+
+.dotted-line {
+    border-bottom: 2px dotted #000;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/* ---------------- Form and Section Title Styling ---------------- */
+
+.bookmark-form{
+    text-align: center;
+    width: 100%;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+
+.icon-gradient, .section-title {
+    background: linear-gradient(to right, #4CAF50, #FFD700); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+/* ---------------- Input and Button Styling ---------------- */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px ;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #ff8c00;
+}
+
+/*==================================== Submit=============================================== */
+.submit-btn {
+    padding: 10px 30px;
+    background-color:rgb(139, 17, 17); 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #e57e00; 
+}
+
+.line-below-btn {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* ---------------- Table Styling ---------------- */
+
+.bookmarks-table {
+    margin-top: 40px;
+}
+
+.table-content {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.table-content th, .table-content td {
+    padding: 12px;
+    border: 1px solid white ;
+}
+
+.table-content th {
+    background-color:white;
+    color: #333;
+    font-weight: 600;
+}
+
+.table-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-content td .visit-btn, .table-content td .delete-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.visit-btn {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+/* ---------------- Modal Styling (Validation Box) ---------------- */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 150px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative; 
+}
+/*=============================================================== 3 circle design ==========================================================*/
+.modal-dots {
+    position: absolute;
+    top: 15px;
+    left: 15px; 
+    display: flex; 
+    gap: 8px; 
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+
+/*================================================ x closed =============================================*/
+.close-btn {
+    color:black;
+    position: absolute; 
+    top: 10px; 
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.modal-header h3 {
+    color: #333; 
+    font-size: 18px;
+    margin-top: 30px; 
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+#validationRules {
+    list-style: none;
+    padding: 0;
+}
+
+#validationRules li {
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 400;
+}
+
+
+#validationRules li .fa-caret-right {
+    color: #d9534f; 
+    margin-left: 10px;
+}

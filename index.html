@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ </title>
+    <!-- frist font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- second font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- main style -->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- media style -->
+    <link rel="stylesheet" href="./css/media.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="bookmarker-title">Bookmarker</h1>
+            <div class="dotted-line"></div>
+        </header>
+
+        <section class="bookmark-form">
+            <h2 class="section-title">
+                <span class="icon-gradient">🔰</span>
+                Bookmark your favorite sites
+                <span class="icon-gradient">🔰</span>
+            </h2>
+
+            <div class="input-group">
+                <label for="siteName"> <i class="fa-solid fa-book-bookmark"></i>Site Name</label>
+                <input type="text" id="siteName" placeholder="Bookmark Name">
+            </div>
+
+            <div class="input-group">
+                <label for="siteURL"><i class="fa-solid fa-link"></i> Site URL</label>
+                <input type="text" id="siteURL" placeholder="Website URL">
+            </div>
+            
+            <button id="submitBtn" class="submit-btn">Submit</button>
+            <div class="dotted-line line-below-btn"></div>
+        </section>
+
+        <section class="bookmarks-table">
+            <table class="table-content">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </section>
+    </div>
+    <div id="validationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <span class="close-btn">&times;</span>
+            <div class="modal-header">
+                <h3>Site Name or Url is not valid, Follow the rules below:</h3>
+            </div>
+            <ul id="validationRules">
+                <li><i class="fa-solid fa-circle-arrow-right"></i></i></i> Site name must contain at least 3 characters</li>
+                <li><i class="fa-solid fa-circle-arrow-right"></i></i> Site URL must be a valid one</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
